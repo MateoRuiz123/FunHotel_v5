@@ -1,0 +1,413 @@
+
+/* Estilos generales */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body,
+input {
+    /*TIPO LETRA*/
+    background-color: rgba(184, 184, 184, 0.47);
+    font-family: "Poppins", sans-serif;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*SOMBREADO*/
+.box {
+    position: relative;
+    width: 69%;
+    max-width: 80rem;
+    height: 30rem;
+    background-color: #ededed;
+    border-radius: 3.3rem;
+    box-shadow: 0 60px 40px -30px rgba(86, 30, 155, 0.317);
+}
+
+.inner-box-ingresar {
+    position: absolute;
+    width: calc(88% - 1.1rem);
+    /*Espacio del contenedor con el formulario*/
+    height: calc(65% - 1.1rem);
+    top: 43%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+}
+
+.forms-wrap {
+    position: absolute;
+    height: 0%;
+    width: 39%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    transition: 0.5s ease-in-out;
+}
+
+form {
+    /*Ancho del formulario*/
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    transition: opacity 0.02s 0.3s;
+}
+
+form.sign-up-form {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.heading h2 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #070505;
+    /*Color letra bienvenidos*/
+}
+
+.toggle {
+    color: #010101;
+    text-decoration: none;
+    font-size: 0.90rem;
+    /*Tamaño letra*/
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.toggle:hover {
+    color: #614bf1;
+    /*Reflejo de color en la letra de registrar e ingresar*/
+}
+
+/*FORMULARIO INGRESAR*/
+.input-wrap {
+    position: relative;
+    height: 1.5rem;
+    /*Espacio entre las rayas a los campos del form*/
+    margin-bottom: 2.5rem;
+    /*Espacio entre los campos y el boton enviar*/
+}
+
+#ver {
+    position: absolute;
+    top: 82%;
+    transform: translate(-50%, -99%);
+    right: 2rem;
+    background: url(/img/eye.png);
+    background-size: cover;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#ver.hide {
+    background: url(/img/ojo.png);
+    background-size: cover;
+}
+
+/*FORMULARIO INGRESAR*/
+.input-field {
+    position: absolute;
+    width: 85%;
+    /*Largo de las rayas de los campos*/
+    height: 90%;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #a49f9f;
+    /*Color de las rayas de los campos*/
+    padding: 0;
+    font-size: 0.95rem;
+    transition: 0.4s;
+
+}
+
+label {
+    position: absolute;
+    left: 0;
+    top: -10px;
+    /* Ajusta la distancia vertical del nombre del campo */
+    transform: translateY(-5%);
+    font-size: 0.95rem;
+    color: rgba(127, 127, 127, 0.7);
+    /* Color de la letra de los campos */
+    pointer-events: none;
+    transition: 0.8s;
+}
+
+.input-field:focus+label,
+.input-field:valid+label {
+    top: -17px;
+    /* Ajusta la distancia vertical del nombre del campo cuando se enfoca o tiene contenido */
+    font-size: 0.95rem;
+    /* Ajusta el tamaño de la fuente cuando se enfoca o tiene contenido */
+    color: #4a2c91;
+    /* Ajusta el color del texto cuando se enfoca o tiene contenido */
+}
+
+.sign-btn {
+    display: inline-block;
+    width: 86.5%;
+    height: 41px;
+    /*Color de botón de envio*/
+    background-color: #4a2c91;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.8rem;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    transition: 0.3s;
+}
+
+.sign-btn:hover {
+    background-color: #705dec;
+    /*Color reflejo del botón*/
+}
+
+.text {
+    color: #000000;
+    /*Color letra de olvidaste tu contra*/
+    font-size: 0.7rem;
+}
+
+/*Color letra de recuperar*/
+.text a {
+    color: #000000;
+    transition: 0.3s;
+}
+
+/*Reflejo color en recuperar*/
+.text a:hover {
+    color: #dfbc20;
+}
+
+main.sign-up-mode form.sign-in-form {
+    opacity: 0;
+    pointer-events: none;
+}
+
+main.sign-up-mode form.sign-up-form {
+    opacity: 5;
+    pointer-events: all;
+}
+
+main.sign-up-mode .forms-wrap {
+    left: 57%;
+}
+
+main.sign-up-mode .carousel {
+    left: 0%;
+}
+
+.carousel {
+    /*TAMAÑOS DEL CARRUSEL*/
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 50%;
+    top: 0;
+    background-color: #3DB6B4;
+    border-radius: 3rem;
+    /*Bordes del contenedor*/
+    display: grid;
+    grid-template-rows: auto 1fr;
+    padding-bottom: 8rem;
+    /*Espacio entre imagen y letra*/
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+    animation: carouselAnimation 1s linear infinite;
+}
+
+.images-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.image {
+    position: relative;
+    left: 15%;
+    width: 70%;
+    /*TAMAÑO IMAGEN CARRUSEL*/
+    grid-column: 1/2;
+    grid-row: 1/2;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.5s;
+    /*Efecto transición*/
+}
+
+.img-1 {
+    transform: translate(0, -20px);
+}
+
+.img-2 {
+    transform: scale(0.3, 0.2);
+}
+
+
+.img-3 {
+    transform: scale(0.3) rotate(-20deg);
+}
+
+.image.show {
+    opacity: 2;
+    transform: none;
+}
+
+.text-wrap {
+    max-height: 2.2rem;
+    /*Pone los textos del carrusel, en los tres*/
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+}
+
+.text-group {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transform: translateY(0);
+    transition: 0.5s;
+}
+
+.text-group h2 {
+    line-height: 2.2rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.bullets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bullets span {
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #ffffff;
+    /*Color de los botonsitos, para pasar el carrusel*/
+    margin: 0 0.25rem;
+    border-radius: 70%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bullets span.active {
+    width: 1.1rem;
+    background-color: #eded16;
+    border-radius: 1rem;
+}
+
+/* Media queries */
+@media (max-width: 850px) {
+    .box {
+        height: auto;
+        max-width: 550px;
+        overflow: hidden;
+    }
+
+    .inner-box-ingresar {
+        position: static;
+        transform: none;
+        width: revert;
+        height: revert;
+        padding: 2rem;
+    }
+
+    .forms-wrap {
+        position: revert;
+        width: 100%;
+        height: auto;
+    }
+
+    form {
+        max-width: revert;
+        padding: 1.5rem 2.5rem 2rem;
+        transition: transform 0.8s ease-in-out, opacity 0.45s linear;
+    }
+
+    .heading {
+        margin: 2rem 0;
+    }
+
+    form.sign-up-form {
+        transform: translateX(100%);
+    }
+
+    main.sign-up-mode form.sign-in-form {
+        transform: translateX(-100%);
+    }
+
+    main.sign-up-mode form.sign-up-form {
+        transform: translateX(0%);
+    }
+
+    .carousel {
+        position: revert;
+        height: auto;
+        width: 100%;
+        padding: 3rem 2rem;
+        display: flex;
+    }
+
+    .images-wrapper {
+        display: none;
+    }
+
+    .text-slider {
+        width: 100%;
+    }
+}
+
+@media (max-width: 100px) {
+    main {
+        padding: 1rem;
+    }
+
+    .box {
+        border-radius: 2rem;
+    }
+
+    .inner-box {
+        padding: 1rem;
+    }
+
+    .carousel {
+        padding: 5.8rem 1rem;
+        border-radius: 5.3rem;
+    }
+
+    .text-wrap {
+        margin-bottom: 1rem;
+    }
+
+    .text-group h2 {
+        font-size: 1.2rem;
+    }
+
+    form {
+        padding: 5rem 2rem 1.5rem;
+    }
+}
