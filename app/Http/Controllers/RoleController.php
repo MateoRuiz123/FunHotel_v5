@@ -64,7 +64,7 @@ class RoleController extends Controller
         $role->estado = Role::Activo;
         $role->syncPermissions($request->input('permission'));
         return redirect()->route('roles.index')
-            ->with('success', 'Role created successfully');
+            ->with('success', 'Rol creado correctamente');
     }
     /**
      * Display the specified resource.
@@ -120,7 +120,7 @@ class RoleController extends Controller
         $role->save();
         $role->syncPermissions($request->input('permission'));
         return redirect()->route('roles.index')
-            ->with('success', 'Role updated successfully');
+            ->with('success', 'Rol actualizado correctamente');
     }
     /**
      * Remove the specified resource from storage.
@@ -139,7 +139,6 @@ class RoleController extends Controller
 
         // Si no es el rol de "Administrador", proceder con la eliminación
         DB::table("roles")->where('id', $id)->delete();
-        return redirect()->route('roles.index')->with('success', 'Role deleted successfully');
+        return redirect()->route('roles.index')->with('success', 'Rol eliminado correctamente');
     }
-
 }

@@ -103,10 +103,10 @@
                             @enderror
                             </div>
                             <input type="submit" value="{{ __('Login') }}" class="sign-btn" />
-                            <p class="text">
+                            {{-- <p class="text">
                                 {{ __('¿Olvidaste tus datos de inicio de sesión?') }}
                                 <a href="{{ route('password.request') }}">{{ __('Recuperar contraseña') }}</a>
-                            </p>
+                            </p> --}}
                         </div>
                     </form>
                 </div>
