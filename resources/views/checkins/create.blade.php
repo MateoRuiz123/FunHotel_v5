@@ -54,13 +54,13 @@
                         enctype="multipart/form-data">
                         @csrf
                         <div class="col-md-6">
-                            <label for="" class="form-label"> Fecha de ingreso</label>
+                            <label for="" class="form-label"> Fecha de ingreso<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                             <input type="datetime-local" class="form-control" name="ingreso" id="ingreso"
                                 aria-describedby="helpId" placeholder="" required>
                         </div>
 
                         <div class="col-md-6">
-                            <label for="" class="form-label">Id Reserva</label>
+                            <label for="" class="form-label">Id Reserva<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                             <select class="form-select" name="reserva" id="reserva" required>
                                 <option value="">Seleccione</option>
                                 @foreach ($reservas as $reserva)

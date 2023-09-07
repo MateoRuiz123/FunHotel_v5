@@ -42,7 +42,7 @@
         @csrf
         <div class="col-md-6">
             <div class="form-group">
-                <strong>Nombre:</strong>
+                <strong>Nombre:<span class="required-field" style="color: red; font-size: 16px;">*</span></strong>
                 <input type="text" name="name" placeholder="Nombre" class="form-control" required>
             </div>
         </div>

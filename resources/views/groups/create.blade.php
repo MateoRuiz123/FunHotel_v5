@@ -78,17 +78,17 @@
 <body>
 <div class="modal fade" id="modalCreate" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="modalCreateLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-ls">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="modalCreateLabel">Registrar nueva ficha</h1><br>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div><br>
+            </div>
             <div class="modal-body">
                 <form id="FichaForm" action="{{ route('groups.store') }}" method="POST" class="row g-3">
                     @csrf
-                    <div class="col-md-6">
-                        <label for="name">Nombre</label>
+                    <div class="col-md-12">
+                        <label for="name">Nombre<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                         <input type="text" placeholder="2471447" name="name" id="name" class="form-control">
                         <span id="nameError" class="text-danger"></span>
                     </div>

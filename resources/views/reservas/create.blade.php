@@ -118,7 +118,7 @@
                         enctype="multipart/form-data">
                         @csrf
                         <div class="col-md-6">
-                            <label for="" class="form-label">Nro. Habitacion</label>
+                            <label for="" class="form-label">Nro. Habitacion<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                             {{-- <input type="text" class="form-control" name="habitacion" id="" aria-describedby="helpId" placeholder=""> --}}
                             <select class="form-select" name="habitacion" id="habitacion" required>
                                 <option value="">Seleccione</option>
@@ -133,7 +133,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label for="" class="form-label">Servicio:</label>
+                            <label for="" class="form-label">Servicio:<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                             <select class="form-select" name="servicio" id="servicio" required>
                                 <option value="">Seleccione</option>
                                 @foreach ($servicios as $servicio)
@@ -149,7 +149,7 @@
 
 
                         <div class="col-md-6">
-                            <label for="" class="form-label">Cliente:</label>
+                            <label for="" class="form-label">Cliente:<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                             {{-- <input type="text" class="form-control" name="cliente" id="" aria-describedby="helpId" placeholder=""> --}}
                             <select class="form-select" name="cliente" id="cliente" required>
                                 <option value="">Seleccione</option>
@@ -163,13 +163,13 @@
                             <span id="clienteError" class="text-danger"></span>
                         </div>
                         <div class="col-md-6">
-                            <label for="entrada" class="form-label">De:</label>
+                            <label for="entrada" class="form-label">De:<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                             <input type="datetime-local" class="form-control" name="entrada" id="entrada"
                                 aria-describedby="helpId" placeholder="">
                         </div>
 
                         <div class="col-md-6">
-                            <label for="salida" class="form-label">Hasta:</label>
+                            <label for="salida" class="form-label">Hasta:<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                             <input type="datetime-local" class="form-control" name="salida" id="salida"
                                 aria-describedby="helpId" placeholder="">
                         </div>

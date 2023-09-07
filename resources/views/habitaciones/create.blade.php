@@ -116,13 +116,13 @@
                     class="row g-3">
                     @csrf
                     <div class="col-md-6">
-                        <label for="">Número de Habitación</label>
+                        <label for="">Número de Habitación<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                         <input class="form-control" type="text" name="numeroHabitacion" id="numeroHabitacion">
                         <span id="numeroSError" class="text-danger"></span>
                     </div>
                     <div class="col-md-6">
                         <!-- Select idCategoria -->
-                        <label for="">Categoría</label>
+                        <label for="">Categoría<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                         <select class="form-select" name="idCategoria" id="idCategoria">
                             <option selected disabled value="" >Seleccione</option>
                             @foreach ($categorias as $categoria)
@@ -134,7 +134,7 @@
                         <span id="categoriaError" class="text-danger"></span>
                     </div>
                     <div class="col-md-6">
-                        <label for="">Descripción</label>
+                        <label for="">Descripción<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                         <textarea class="form-control" type="text" name="descripcion" id="descripcion"></textarea>
                         <span id="descripcionError" class="text-danger"></span>
                     </div>
