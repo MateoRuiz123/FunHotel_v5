@@ -35,7 +35,6 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Número de documento</th>
                             <th>Nombre</th>
                             <th>Segundo nombre</th>
                             <th>Apellido</th>
@@ -51,7 +50,6 @@
                         @foreach ($users as $user)
                             <tr>
                                 <td>{{ $user->id }}</td>
-                                <td>{{$user->tipoDocumento}} - {{$user->numeroDocumento}}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->second_name }}</td>
                                 <td>{{ $user->surname }}</td>
@@ -73,18 +71,40 @@
                                                 class="bi bi-pencil-square"></i></a>
                                     @endcan
                                     @can('user-delete')
-                                        <form method="POST" action="{{ route('users.destroy', $user->id) }}"
-                                            style="display:inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash3"></i></button>
-                                        </form>
+                                        <button class="btn btn-danger" data-bs-toggle="modal"
+                                            data-bs-target="#deleteModal{{ $user->id }}"><i class="bi bi-trash3"></i></button>
                                     @endcan
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteModal{{ $user->id }}" tabindex="-1" role="dialog"
+        aria-labelledby="deleteModalLabel{{ $user->id }}" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel{{ $user->id }}">
+                        Confirmar eliminación</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas eliminar a {{ $user->name }}?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <form method="POST" action="{{ route('users.destroy', $user->id) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
