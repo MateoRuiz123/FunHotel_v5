@@ -95,28 +95,6 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <strong>Tipo de documento</strong>
-                            <select id="tipoDocumento" name="tipoDocumento" class="form-control" required>
-                                <option selected value="{{ $user->tipoDocumento }}">
-                                    {{ $user->tipoDocumento }}</option>
-                                <option value="Cedula">Cedula</option>
-                                <option value="Pasaporte">Pasaporte</option>
-                                <option value="Cedula de extranjeria">Cedula de extranjeria</option>
-                                <option value="Tarjeta de identidad">Tarjeta de identidad</option>
-                                <option value="Registro civil">Registro civil</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <strong>Número de documento:</strong>
-                            <input type="text" name="numeroDocumento" placeholder="Número de documento"
-                                class="form-control"value="{{ $user->numeroDocumento }}">
-
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
                             <strong>Contraseña:</strong>
                             <input type="password" name="password" placeholder="Contraseña" class="form-control">
                         </div>

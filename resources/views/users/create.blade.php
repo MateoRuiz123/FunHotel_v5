@@ -305,27 +305,6 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <strong>Tipo de documento: <span class="required-field" style="color: red; font-size: 16px;">*</span></strong>
-                        <select id="tipoDocumento" name="tipoDocumento" class="form-control" required>
-                            <option value="">Seleccione un tipo de documento</option>
-                            <option value="Cedula">Cedula</option>
-                            <option value="Pasaporte">Pasaporte</option>
-                            <option value="Cedula de extranjeria">Cedula de extranjeria</option>
-                            <option value="Tarjeta de identidad">Tarjeta de identidad</option>
-                            <option value="Registro civil">Registro civil</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <strong>Número de documento: <span class="required-field" style="color: red; font-size: 16px;">*</span></strong>
-                        <input type="text" id="numeroDocumento" name="numeroDocumento" placeholder="Número de documento"
-                            class="form-control" required>
-                        <span id="numeroDocumentoError" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
                         <strong>Contraseña: <span class="required-field" style="color: red; font-size: 16px;">*</span></strong>
                         <div class="input-group">
                             <input type="password" id="password" name="password" placeholder="Contraseña"

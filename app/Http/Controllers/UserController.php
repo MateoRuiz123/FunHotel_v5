@@ -37,8 +37,6 @@ class UserController extends Controller
             'birthday'=>'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password',
-            'tipoDocumento'=>'required',
-            'numeroDocumento'=>'required',
             'roles' => 'required|array',
             'roles.*' => 'exists:roles,id',
         ]);
@@ -68,8 +66,6 @@ class UserController extends Controller
             'surname'=>'required',
             'email' => 'required|email|unique:users,email,' . $user->id,
             'password' => 'same:confirm-password',
-            'tipoDocumento'=>'required',
-            'numeroDocumento'=>'required',
             'roles' => 'required|array',
             'roles.*' => 'exists:roles,id',
         ]);
