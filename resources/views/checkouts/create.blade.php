@@ -64,14 +64,14 @@
                             enctype="multipart/form-data">
                             @csrf
                             <div class="col-md-6">
-                                <label for="" class="form-label"> Fecha de salida</label>
+                                <label for="" class="form-label"> Fecha de salida<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                                 <input type="date" class="form-control" name="salida" id="salida"
                                     aria-describedby="helpId" placeholder="">
 
                             </div>
 
                             <div class="col-md-6">
-                                <label for="" class="form-label">Id Check-in</label>
+                                <label for="" class="form-label">Id Check-in<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                                 <select name="checkin" id="checkin" class="form-select">
                                     <option selected disabled value="">Seleccione</option>
                                     @foreach ($checkins as $checkin)
@@ -84,7 +84,7 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label for="" class="form-label">Id Reserva</label>
+                                <label for="" class="form-label">Id Reserva<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                                 <select name="reserva" id="reserva" class="form-select">
                                     <option selected disabled value="">Seleccione</option>
                                     @foreach ($reservas as $reserva)
@@ -97,7 +97,7 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label for="" class="form-label">Cliente:</label>
+                                <label for="" class="form-label">Cliente:<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                                 {{-- <input type="text" class="form-control" name="cliente" id="" aria-describedby="helpId" placeholder=""> --}}
                                 <select class="form-select" name="cliente" id="cliente" required>
                                     <option selected disabled value="">Seleccione</option>
@@ -113,7 +113,7 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label for="" class="form-label">Metodo de pago</label>
+                                <label for="" class="form-label">Metodo de pago<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                                 <select name="metpago" id="metpago" class="form-select">
                                     <option selected disabled value="">Seleccione</option>
                                     @foreach ($metodos as $metodo)
@@ -126,7 +126,7 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label for="" class="form-label">Id Venta</label>
+                                <label for="" class="form-label">Id Venta<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                                 <select name="venta" id="venta" class="form-select">
                                     <option selected disabled value="">Seleccione</option>
                                     @foreach ($ventas as $venta)

@@ -18,14 +18,6 @@ class PagoController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -34,47 +26,28 @@ class PagoController extends Controller
         $pagos-> nombre = $request->input('nombre');
         $pagos-> estado = Pago::Activo;
         $pagos->save();
-        return redirect()->back();
+        // return redirect()->back()->with('success', 'Pago creado correctamente');
+        return redirect()->route('pagos.index')->with('success', 'Pago creado correctamente');
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(pago $pago)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, $id)
     {
         $pagos = Pago::find($id);
         $pagos-> nombre = $request->input('nombre');
         $pagos-> estado = $request->input('estado');
         $pagos->update();
-        return redirect()->back();
+        // return redirect()->back()->with('success', 'Pago actualizado correctamente');
+        return redirect()->route('pagos.index')->with('success', 'Pago actualizado correctamente');
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy($id)
     {
         $pagos = Pago::find($id);
         $pagos->delete();
-        return redirect()->back();
+        // return redirect()->back()->with('success', 'Pago eliminado correctamente');
+        return redirect()->route('pagos.index')->with('success', 'Pago eliminado correctamente');
         //
     }
 }

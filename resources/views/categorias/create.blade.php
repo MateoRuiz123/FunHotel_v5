@@ -96,12 +96,12 @@
                     enctype="multipart/form-data">
                     @csrf
                     <div class="col-md-6">
-                        <label for="nombre" class="form-label">Nombre</label>
+                        <label for="nombre" class="form-label">Nombre<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                         <input type="text" class="form-control" name="nombre" id="nombre" required>
                         <span id="nombreError" class="text-danger"></span>
                     </div>
                     <div class="col-md-6">
-                        <label for="" class="form-label">Descripción</label>
+                        <label for="" class="form-label">Descripción<span class="required-field" style="color: red; font-size: 16px;">*</span></label>
                         <textarea type="text" class="form-control" name="descripcion" id="descripcion" required></textarea>
                         <span id="descripcionError" class="text-danger"></span>
                     </div>

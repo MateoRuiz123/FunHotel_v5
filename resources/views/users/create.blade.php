@@ -260,7 +260,7 @@
                 @csrf
                 <div class="col-md-6">
                     <div class="form-group">
-                        <strong>Nombre:</strong>
+                        <strong>Nombre: <span class="required-field" style="color: red; font-size: 16px;">*</span></strong>
                         <input type="text" id="name" name="name" placeholder="Nombre" class="form-control">
                         <span id="nombreError" class="text-danger"></span>
                     </div>
@@ -275,7 +275,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <strong>Apellido:</strong>
+                        <strong>Apellido: <span class="required-field" style="color: red; font-size: 16px;">*</span></strong>
                         <input type="text" id="surname" name="surname" placeholder="Apellido" class="form-control">
                         <span id="apellidoError" class="text-danger"></span>
                     </div>
@@ -290,7 +290,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6">
                     <div class="form-group">
-                        <strong>Fecha de nacimiento:</strong>
+                        <strong>Fecha de nacimiento: <span class="required-field" style="color: red; font-size: 16px;">*</span></strong>
                         <input type="date" id="birthday" name="birthday" placeholder="Fecha de nacimiento"
                             class="form-control">
                         <span id="birthdayError" class="text-danger"></span>
@@ -298,14 +298,14 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <strong>Email:</strong>
+                        <strong>Email: <span class="required-field" style="color: red; font-size: 16px;">*</span></strong>
                         <input type="text" id="email" name="email" placeholder="Email" class="form-control">
                         <span id="emailError" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <strong>Tipo de documento:</strong>
+                        <strong>Tipo de documento: <span class="required-field" style="color: red; font-size: 16px;">*</span></strong>
                         <select id="tipoDocumento" name="tipoDocumento" class="form-control" required>
                             <option value="">Seleccione un tipo de documento</option>
                             <option value="Cedula">Cedula</option>
@@ -318,7 +318,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <strong>Número de documento:</strong>
+                        <strong>Número de documento: <span class="required-field" style="color: red; font-size: 16px;">*</span></strong>
                         <input type="text" id="numeroDocumento" name="numeroDocumento" placeholder="Número de documento"
                             class="form-control" required>
                         <span id="numeroDocumentoError" class="text-danger"></span>
@@ -326,7 +326,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <strong>Contraseña:</strong>
+                        <strong>Contraseña: <span class="required-field" style="color: red; font-size: 16px;">*</span></strong>
                         <div class="input-group">
                             <input type="password" id="password" name="password" placeholder="Contraseña"
                                 class="form-control">
@@ -339,7 +339,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <strong>Confirmar Contraseña:</strong>
+                        <strong>Confirmar Contraseña: <span class="required-field" style="color: red; font-size: 16px;">*</span></strong>
                         <div class="input-group">
                             <input type="password" id="confirm-password" name="confirm-password"
                                 placeholder="Confirmar Contraseña" class="form-control">
@@ -352,9 +352,9 @@
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <strong>Rol:</strong>
+                        <strong>Rol: <span class="required-field" style="color: red; font-size: 16px;">*</span></strong>
                         <select id="roles" name="roles[]" class="form-control">
-                            <option value="">Seleccione un rol</option>
+                            <option value="">Seleccione un rol <span class="required-field" style="color: red; font-size: 16px;">*</span></option>
                             @foreach ($roles as $role)
                                 <option value="{{ $role->id }}">{{ $role->name }}</option>
                             @endforeach
