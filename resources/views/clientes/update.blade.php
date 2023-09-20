@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+        function ServicioC() {
+                Swal.fire({
+                    title: 'Confirmación',
+                    text: '¿Estás seguro de editar el cliente?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Estoy seguro',
+                    cancelButtonText: 'Cancelar',
+                    confirmButtonColor: '#12B901',
+                    cancelButtonColor: '#E41919'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.getElementById('Servicio').submit();
+                    }
+                });
+            }
     <script>
         document.addEventListener('DOMContentLoaded', function () {
         var requiredFields = document.querySelectorAll('.custom-form-control[required]');
@@ -94,7 +113,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form id="edit-form" action="{{ route('clientes.update', $cliente->id) }}" method="post"
+                <form id="Servicio" action="{{ route('clientes.update', $cliente->id) }}" method="post"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')

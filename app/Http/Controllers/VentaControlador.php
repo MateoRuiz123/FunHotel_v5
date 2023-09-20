@@ -37,7 +37,7 @@ class VentaControlador extends Controller
         $reservas = Reserva::all();
         $servicios = Servicio::all();
 
-        return view('ventas.create', compact('reservas','servicios'));
+        return view('ventas.create', compact('reservas', 'servicios'));
     }
     public function obtenerInformacionReserva($id)
     {
@@ -63,6 +63,14 @@ class VentaControlador extends Controller
         $venta->estado = Venta::Activo;
         $venta->idReserva = $request->input('idReserva');
         $venta->save();
+
+        // Desactivar la reserva asociada
+        $idReserva = $request->input('idReserva');
+        $reserva = Reserva::find($idReserva);
+        $reserva->estado = Reserva::Inactivo;
+        $reserva->save();
+
+
         $servicios = $request->input('servicios');
         $venta->servicios()->attach($servicios);
 
@@ -80,7 +88,7 @@ class VentaControlador extends Controller
     {
         $clientes = Cliente::all();
         $servicios = Servicio::all();
-        return view('ventas.show', compact('venta', 'clientes','servicios'));
+        return view('ventas.show', compact('venta', 'clientes', 'servicios'));
     }
 
     /**
@@ -95,12 +103,26 @@ class VentaControlador extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Venta $venta)
+    public function update(Request $request, $id)
     {
+        $venta = Venta::findOrFail($id);
+
+        // Actualizar el estado de la venta
         $venta->estado = $request->input('estado');
         $venta->save();
-        return redirect()->route('ventas.index')->with('mensaje', 'Venta Actualizar con éxito');
+
+        // Si el estado de la venta es Inactivo, activar la reserva
+        if ($venta->estado == \App\Models\Venta::Inactivo) {
+            $reserva = $venta->reserva;
+            if ($reserva) {
+                $reserva->estado = \App\Models\Reserva::Activo;
+                $reserva->save();
+            }
+        }
+
+        return redirect()->route('ventas.index')->with('mensaje', 'Estado de la venta actualizado con éxito');
     }
+
 
     /**
      * Remove the specified resource from storage.

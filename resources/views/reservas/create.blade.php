@@ -199,9 +199,10 @@
                 </div>
                 </form>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button class="btn btn-primary" onclick="reserva()" type="submit"
+                           <button class="btn btn-primary" onclick="reserva()" type="submit"
                         type="submitButton">Crear</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+             
                 </div>
             </div>
         </div>

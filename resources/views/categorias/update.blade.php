@@ -54,7 +54,7 @@
                             <textarea type="text" class="form-control categoria" name="descripcion" id="descripcion" required>{{ $categoria->descripcion }}</textarea>
                             <small class="invalid-feedback"></small>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-6">
                             <label for="estado" class="form-label">Estado</label>
                             <select class="form-select" name="estado" id="estado">
                                 <option value="{{\App\Models\Categoria::Activo}}" {{ $categoria->estado == \App\Models\Categoria::Activo ? 'selected' : '' }}>Activo</option>

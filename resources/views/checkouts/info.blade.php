@@ -1,4 +1,23 @@
-<!-- Modal Edit -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function actuC() {
+        Swal.fire({
+            title: 'Confirmación',
+            text: '¿Estás seguro de editar el checkouts?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Estoy seguro',
+            cancelButtonText: 'Cancelar',
+            confirmButtonColor: '#12B901',
+            cancelButtonColor: '#E41919'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('Chform').submit();
+            }
+        });
+    }
+</script>
 <div class="modal fade" id="edit{{ $checkout->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="modalCreateLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -11,7 +30,7 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <form class="row g-3" action="{{ route('checkouts.update', $checkout->id) }}" method="post"
+                    <form id="Chform" class="row g-3" action="{{ route('checkouts.update', $checkout->id) }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -93,14 +112,12 @@
                                     Inactivo</option>
                             </select>
                         </div>
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary">Editar</button>
+                    </form><br>
+                        <div class="col-md-12" style="text-align: right;">
+                            <button type="submit" onclick="actuC()" class="btn btn-primary">Actualizar</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         </div>
-                    </form>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>

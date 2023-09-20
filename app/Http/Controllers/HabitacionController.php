@@ -49,7 +49,7 @@ class HabitacionController extends Controller
         $habitacion->save();
 
 
-        return redirect()->route('habitaciones.index')->with('success', 'Habitacion creada exitosamente');
+        return redirect()->route('habitaciones.index')->with('success', 'Habitación creada exitosamente');
     }
 
     /**

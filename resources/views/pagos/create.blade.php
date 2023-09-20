@@ -99,7 +99,7 @@
                     </form>
                 </div><br>
                 <div class="modal-footer"><br><br>
-                    <button type="submit" onclick="pagos()" class="btn btn-primary">Agregar</button>
+                    <button type="submit" onclick="pagos()" class="btn btn-primary">Crear</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>

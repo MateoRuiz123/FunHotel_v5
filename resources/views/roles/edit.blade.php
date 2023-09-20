@@ -6,9 +6,6 @@
             <div class="col-md-8">
                 <h6 class="page-title">Editar rol {{ $role->name }}</h6>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('roles.index') }}">Volver</a>
-            </div>
         </div>
     </div>
 
@@ -72,7 +69,8 @@
         </div>
         <div class="col-md-12">
             <button type="submit" class="btn btn-primary"
-                onclick="return confirm('¿Estás seguro de guardar los cambios?')">Guardar</button>
+                onclick="return confirm('¿Estás seguro de guardar los cambios?')">Actualizar</button>
+             <a class="btn btn-light" href="{{ route('users.index') }}">Volver</a>
         </div>
     </form>
     <style>

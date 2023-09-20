@@ -46,8 +46,6 @@
 </head>
 
 <body>
-
-        <!-- Modal -->
         <div class="modal fade" id="create" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="modalCreateLabel" aria-hidden="true">
 
@@ -59,7 +57,6 @@
                         </button>
                     </div>
                     <div class="modal-body">
-
                         <form id="CheckOu" class="row g-3" action="{{ route('checkouts.store') }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
@@ -148,9 +145,7 @@
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
-
             </div>
         </div>
 </body>
-
 </html>

@@ -32,7 +32,7 @@
                         <th>Cliente</th>
                         <th>Servicio</th>
                         <th>Precio</th>
-                        <th>Estado</th> <!-- Nueva columna -->
+                        <th>Estado</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -44,9 +44,7 @@
                         <td>{{ $venta->reserva->cliente->primerNombre}} {{ $venta->reserva->cliente->primerApellido }}</td>
                         <td>{{ $venta->reserva->servicio->nombre }}</td>
                         <td>${{$venta->reserva->servicio->precio}}</td>
-                        {{-- <td>{{ $venta->estado_texto }}</td> --}}
                         <td>
-                            <!-- Estilo personalizado para el botón de switch -->
                             <label class="switch">
                                 <input type="checkbox" id="estado-{{ $venta->id }}"
                                     onchange="cambiarEstado({{ $venta->id }})"
@@ -55,11 +53,6 @@
                             </label>
                         </td>
                         <td>
-                            {{-- <a href="{{ route('ventas.edit', ['venta' => $venta->id]) }}"
-                                class="btn btn-warning">
-                                <i class="bi bi-pencil-square"></i>
-                            </a> --}}
-
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                 data-bs-target="#delete{{ $venta->id }}">
                                 <i class="bi bi-trash3"></i>
@@ -75,7 +68,6 @@
 </div>
 
 <style>
-    /* Estilos personalizados para el botón de switch */
     .switch {
         position: relative;
         display: inline-block;
@@ -124,8 +116,6 @@
     input:checked + .slider:before {
         transform: translateX(20px);
     }
-
-    /* Ajusta los estilos según tus preferencias */
 </style>
 
 <script>

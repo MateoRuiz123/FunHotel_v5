@@ -376,6 +376,5 @@
         </script>
 
     </body>
-
     </html>
 @endsection

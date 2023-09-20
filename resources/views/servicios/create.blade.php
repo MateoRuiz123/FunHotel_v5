@@ -57,14 +57,21 @@
             }
 
             $('#nombre').on('input', function() {
-                var nombre = $(this).val();
+            var nombre = $(this).val();
+
+            if (nombre.length > 250) {
+                $(this).val(nombre.substring(0, 250)); // Limita el valor a 250 caracteres
+                $('#nombreError').text('No se permiten más de 250 caracteres');
+            } else {
+                $('#nombreError').text('');
 
                 if (nombre.trim() === '') {
                     $('#nombreError').text('El nombre del servicio es requerido');
                 } else {
                     $('#nombreError').text('');
                 }
-            });
+            }
+        });
 
             $('#descripcion').on('input', function() {
                 var descripcion = $(this).val();

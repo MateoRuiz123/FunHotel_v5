@@ -21,16 +21,11 @@
         }
     </script>
 
-
-
     <body>
         <div class="container">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
                     <h2>Editar usuario {{ $user->name }}</h2>
-                </div>
-                <div class="pull-right">
-                    <a class="btn btn-primary" href="{{ route('users.index') }}">Volver</a>
                 </div>
             </div>
         </div>
@@ -131,7 +126,7 @@
                             </option>
                         </select>
                     </div>
-                    <br>
+                    <br><br><br><br><br><br><br>
                 </form>
                 <div class="col-md-12">
                     <button type="submit" onclick="Usve()" class="btn btn-primary">Actualizar</button>

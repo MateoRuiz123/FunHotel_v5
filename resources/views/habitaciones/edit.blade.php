@@ -69,7 +69,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="numeroHabitacion">Número de Habitación</label>
-                                <input type="number" name="numeroHabitacion" id="numeroHabitacion" class="form-control"
+                                <input type="number" name="numeroHabitacion" id="numeroHabitacion" class="form-control habitacion"
                                     value="{{ $habitacion->numeroHabitacion }}" required>
                                 <small class="invalid-feedback"></small>
                             </div>
@@ -114,7 +114,5 @@
             </div>
         </div>
     </div>
-
 </body>
-
 </html>
